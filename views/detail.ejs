@@ -3,11 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle de pelicula: </title>
+    <title>Detalle de pelicula: <%= pelicula.title %> </title>
 </head>
 <body>
-    <h1>Detalle de #NombreDePelicula </h1>
+    <h1>Detalle de <span class="peliTitulo"> <%= pelicula.title %> </span> </h1>
 
+    <div class="infoPeli">
+
+        <h3> Titulo: <span class="infoEspecificaPeli"> <%= pelicula.title %> </span> </h3>
+
+        <h3> Rating: <span class="infoEspecificaPeli"> <%= pelicula.rating %> </span> </h3>
+
+        <h3> Género: <span class="infoEspecificaPeli"> FALTA HACER LA ASOCIACION </span> </h3>
+
+        <h3> Cantidad de Awards: <span class="infoEspecificaPeli"> <%= pelicula.awards %> </span> </h3>
+
+        <h3> Fecha de Estreno: <span class="infoEspecificaPeli"> <%= pelicula.releaseDate %> </span> </h3>
+
+        <% if(pelicula.length == null) { %> 
+        <h3> Duración de la pelicula: <span class="infoEspecificaPeli"> No está registrado </span> </h3>
+        <% } else { %>
+        <h3> Duración de la película: <span class="infoEspecificaPeli"> <%= pelicula.length %> </span> </h3>
+        <% } %>  
+
+        <h3> Lista de Actores: <ul>
+            <span class="infoEspecificaPeli"><li>ACA LA LISTA DE ACTORES, FALTA ASOCIACION</li></span>
+        </ul>
+
+    </div>
+
+    <a href="/detail/<%= pelicula.id %>/update" class="actualizarPeli">Actualizá los datos</a>
+
+    <form class="formBorrarPeli" action="/detail/<%= pelicula.id %>/delete" method="POST">
+    
+        <input class="inputBorrarPeli" type="submit" value="Borrar">
+
+    </form>
+
+    <a href="/" class="volverHome">Volver a la Home</a>
 
 </body>
 </html>

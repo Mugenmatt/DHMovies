@@ -6,7 +6,7 @@ module.exports = {
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases" : 0,
-    "define" : {underscored:1}
+    "define" : { underscored : 0 }
   },
   "test": {
     "username": "root",
