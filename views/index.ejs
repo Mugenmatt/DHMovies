@@ -10,14 +10,14 @@
     <h3>Lista de peliculas de DH Movies:</h3>
 
     <ul class="listaPeliculas">
-
-    <!-- 
-      < % peliculas.map(pelicula => { %> 
-      < %= <li class="pelicula"><a href="/detail/:id">PeliculaAMostrar</a></li> %>
-      < % }) %> -->
+    
+      <% todasLasPeliculas.map(pelicula => { %> 
+        <li class="pelicula"><a href="/detail/<%= pelicula.id %> "> <%= pelicula.title %>  </a></li> 
+      <% }) %>
     
     </ul>
 
+    <a href="/newFilm">¡Agregá una película!</a>
 
   </body>
 </html>
