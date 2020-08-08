@@ -4,16 +4,15 @@ const sequelize = DB.sequelize;
 
 const Movie = DB.Movie;
 
+const Genre = DB.Genre;
+
+const Actor = DB.Actor;
+
+const ActorMovie = DB.ActorMovie;
+
 module.exports = {
 
     index : function(req, res) {
-
-        // sequelize.query('SELECT * FROM movies')
-        // .then(peliculas => {
-        //     let todasLasPeliculas = peliculas[0]; 
-        //     // res.send(todasLasPeliculas)
-        //     return res.render('index', { title: 'DH Movies Challenge', todasLasPeliculas }); 
-        // })
 
         Movie.findAll()
         .then(peliculas => {
@@ -25,12 +24,27 @@ module.exports = {
     },
 
     newFilm : function(req, res) {
-        res.render('newFilm')
+
+        Genre.findAll()
+        .then(generos => {
+                return res.render('newFilm', { title: 'Nueva Película', generos }); 
+            })
+        .catch(error => console.log(error))
+    },
+
+    newFilmProcess : function(req, res) {
+        res.redirect('/')
     },
 
     detail : function(req, res) {
 
-        Movie.findByPk(req.params.id)
+        Movie.findByPk(req.params.id, {
+            include : [{
+                association : "genero",
+            }, {
+                association : "actores"
+            }]
+        })
         .then(pelicula => {
                 return res.render('detail', { title: 'DH Movies Challenge', pelicula }); 
             })

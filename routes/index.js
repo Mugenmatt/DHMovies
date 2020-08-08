@@ -8,6 +8,8 @@ router.get('/', indexController.index);
 
 router.get('/newFilm', indexController.newFilm);
 
+router.post('/newFilm', indexController.newFilmProcess);
+
 router.get('/detail/:id', indexController.detail)
 
 module.exports = router;

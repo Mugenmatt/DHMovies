@@ -14,7 +14,11 @@
 
         <h3> Rating: <span class="infoEspecificaPeli"> <%= pelicula.rating %> </span> </h3>
 
-        <h3> Género: <span class="infoEspecificaPeli"> FALTA HACER LA ASOCIACION </span> </h3>
+        <% if( pelicula.genre_id  !== null ) { %> 
+            <h3> Género: <span class="infoEspecificaPeli"> <%= pelicula.genero['name'] %>  </span> </h3>
+        <% } else { %>
+            <h3> Género: No tiene género especficado </h3>
+        <% } %> 
 
         <h3> Cantidad de Awards: <span class="infoEspecificaPeli"> <%= pelicula.awards %> </span> </h3>
 
@@ -27,7 +31,9 @@
         <% } %>  
 
         <h3> Lista de Actores: <ul>
-            <span class="infoEspecificaPeli"><li>ACA LA LISTA DE ACTORES, FALTA ASOCIACION</li></span>
+            <% pelicula.actores.map(actor => { %>
+                <li><span class="infoEspecificaPeli"> <%= actor.firstName %> <%= actor.lastName %>  </span></li>
+            <% }) %> 
         </ul>
 
     </div>

@@ -13,14 +13,25 @@
     
         <label for="">Titulo</label>
         <input type="text">
+
         <label for="">Rating</label>
         <input type="number">
+
         <label for="">Awards</label>
         <input type="number">
+
         <label for="">Fecha de Estreno</label>
         <input type="date">
+
         <label for="">Duración</label>
         <input type="text">
+
+        <label for="">Género</label>
+        <select name="" id="">
+            <% generos.forEach(genero => { %>
+                <option value="<%= genero.name %>"><%= genero.name %></option>
+            <% }) %> 
+        </select>
     
     </form>
 
