@@ -12,9 +12,23 @@
     
         <label for="email">Email</label>
         <input type="email" name="email" id="email">
+        <p class="error">
+            <% if(typeof errors != 'undefined') { %>
+                <% if(errors.email) { %>
+                    <%= errors.email.msg %> 
+                <% } %>  
+            <% } %>  
+        </p>
 
         <label for="pass">Contraseña</label>
         <input type="password" name="password" id="pass">
+        <p class="error">
+            <% if(typeof errors != 'undefined') { %>
+                <% if(errors.password) { %>
+                    <%= errors.password.msg %> 
+                <% } %>  
+            <% } %>  
+        </p>
 
         <input type="submit" value="Iniciá sesión">
 

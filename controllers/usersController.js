@@ -50,7 +50,27 @@ const usersController = {
 
     loginProcess : function(req, res) {
 
-        
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()) {
+
+            User.findOne({
+                where: {
+                    email : req.body.email
+                }
+            })
+            .then( usuario => {
+                    if(usuario) {
+                        delete usuario.password
+                        return res.redirect('/')
+                    } else {
+                        return res.render('login', {errors: errors.mapped(), title:'¡Iniciá Sesión!' })
+                    }
+            })
+
+        } else {
+            return res.render('login', { errors : errors.mapped(), title : '¡Iniciá Sesión!' })
+        }
 
     }
 
