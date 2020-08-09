@@ -1,8 +1,8 @@
 module.exports = (sequelize, dataTypes) => {
 
-    let alias = "ActorMovie";
+    alias = "ActorMovie";
 
-    let cols = {
+    cols = {
         id: {
             type: dataTypes.INTEGER.UNSIGNED,
             primaryKey: true,

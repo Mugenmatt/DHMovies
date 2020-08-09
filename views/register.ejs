@@ -7,26 +7,48 @@
   <body>
     <h1><%= title %></h1>
 
-
     <form action="/users/register" method="POST">
     
         <label for="email">Email</label>
-        <input type="email" name="email" id="email">
+        <input type="email" name="email" id="email" value="<%= typeof dataAntesIngresada != 'undefined' ? dataAntesIngresada.email : '' %> ">
+        <p class="error">
+            <% if(typeof errors != 'undefined') { %>
+                <% if(errors.email) { %>
+                    <%= errors.email.msg %> 
+                <% } %>  
+            <% } %>  
+        </p>
 
         <label for="pass">Password</label>
         <input type="password" name="password" id="pass">
+        <p class="error">
+            <% if(typeof errors != 'undefined') { %>
+                <% if(errors.password) { %>
+                    <%= errors.password.msg %> 
+                <% } %>  
+            <% } %>  
+        </p>
 
         <label for="pass">Confirme su contraseña</label>
         <input type="password" name="confirmPassword" id="pass">
+        <p class="error">
+            <% if(typeof errors != 'undefined') { %>
+                <% if(errors.confirmPassword) { %>
+                    <%= errors.confirmPassword.msg %> 
+                <% } %>  
+            <% } %>  
+        </p>
 
-        <label for="rol">Rol</label>
+        <label for="rol">Admin</label>
         <input type="checkbox" name="rol" id="rol">
+
+        <input type="submit" value="Registrate">
 
     </form>
 
-    <a href="/login">¿Ya tenes un usuario?</a>
+    <a href="/users/login">¿Ya tenes un usuario?</a>
 
     <a href="/">Volver a Home</a>
 
-  </body>
+</body>
 </html>
