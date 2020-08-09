@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+    <h1><%= title %></h1>
+
+
+    <form action="/users/login" method="POST">
+    
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+
+        <label for="pass">Contraseña</label>
+        <input type="password" name="password" id="pass">
+
+        <label for="rol">Rol</label>
+        <input type="checkbox" name="rol" id="rol">
+
+    </form>
+
+    <a href="/register">¿No estas registrado?</a>
+
+    <a href="/">Volver a Home</a>
+
+</body>
+</html>
