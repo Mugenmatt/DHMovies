@@ -42,15 +42,17 @@
         <!-- < % } %>   -->
 
     </div>
+    <!-- < % if(rol == 1) { %>  -->
+        <a href="/detail/<%= pelicula.id %>/update" class="actualizarPeli">Actualizá los datos</a>
 
-    <a href="/detail/<%= pelicula.id %>/update" class="actualizarPeli">Actualizá los datos</a>
+        <form class="formBorrarPeli" action="/detail/<%= pelicula.id %>/delete" method="POST">
+        
+            <input class="inputBorrarPeli" type="submit" value="Borrar">
 
-    <form class="formBorrarPeli" action="/detail/<%= pelicula.id %>/delete" method="POST">
+        </form>
+
+    <!-- < % } %>  -->
     
-        <input class="inputBorrarPeli" type="submit" value="Borrar">
-
-    </form>
-
     <a href="/" class="volverHome">Volver a la Home</a>
 
 </body>

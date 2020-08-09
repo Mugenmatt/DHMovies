@@ -1,4 +1,5 @@
 const path = require('path');
+const bcryptJS = require('bcryptjs')
 const { check, validationResult, body } = require('express-validator');
 
 const DB = require('../database/models')
@@ -26,23 +27,6 @@ module.exports = {
         .notEmpty().withMessage('Email: No puede estar vacío'),
 
         body('password')
-        .notEmpty().withMessage('Contraseña: No puede estar vacía').bail()
-        .custom(function(valor, { req }) {
-            User.findOne({
-                where: {
-                    email : req.body.email
-                }
-            })
-            .then( usuario => {
-                if(usuario) {
-                    let comparacionPass = bcryptJS.compareSync(req.body.password, usuario.password);
-                    if(comparacionPass) {
-                        return true;
-                    } else {
-                        return false
-                    }
-                }
-            })
-        }).withMessage('Los datos no coinciden')
+        .notEmpty().withMessage('Contraseña: No puede estar vacía')
     ]
 }

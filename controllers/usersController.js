@@ -15,7 +15,6 @@ const usersController = {
 
     registerProcess : function(req, res) {
 
-
         let errors = validationResult(req);
 
         if(errors.isEmpty()) {
@@ -60,12 +59,19 @@ const usersController = {
                 }
             })
             .then( usuario => {
-                    if(usuario) {
-                        delete usuario.password
+                if(usuario) {
+                    if(bcryptJS.compareSync(req.body.password, usuario.password)) {
+                        let usuarioEnSesion = usuario;
+                        
+                        delete usuarioEnSesion.dataValues.password;
+
+                        req.session.usuario = usuarioEnSesion;
+
                         return res.redirect('/')
                     } else {
-                        return res.render('login', {errors: errors.mapped(), title:'¡Iniciá Sesión!' })
+                        return res.render('login', {title : '¡Iniciá Sesión!', error: 'Los datos ingresados no coinciden'})
                     }
+                }
             })
 
         } else {

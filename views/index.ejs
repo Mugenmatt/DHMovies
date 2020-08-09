@@ -5,6 +5,21 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+
+    <header>
+      <!-- < % if(rol) { %>
+        <h2>Hola, sos < %= rol %> </h2>
+      < % } else { %>
+        <h2>Hola, sos < %= rol %> </h2>
+      < % } %> -->
+    </header>
+
+    <!-- < % if(admin == 1) { %> 
+      <h2>< %= denegado %> </h2>
+    < % } %> -->
+
+    
+
     <h1><%= title %></h1>
 
     <h3>Lista de peliculas de DH Movies:</h3>
@@ -17,7 +32,9 @@
     
     </ul>
 
+    <!-- < % if(rol == 1) { %>  -->
     <a href="/newFilm">¡Agregá una película!</a>
+    <!-- < % } %>  -->
 
     <a href="/users/register">¡Registrate!</a>
     <a href="/users/login">¡Iniciá Sesión!</a>

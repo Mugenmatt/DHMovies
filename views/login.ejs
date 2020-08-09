@@ -30,6 +30,12 @@
             <% } %>  
         </p>
 
+        <% if(typeof error != 'undefined')  {%>
+                    
+            <p class="error">Los datos ingresados no coinciden</p>
+
+        <% } %> 
+
         <input type="submit" value="Iniciá sesión">
 
     </form>
