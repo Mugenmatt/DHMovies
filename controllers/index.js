@@ -33,7 +33,19 @@ module.exports = {
     },
 
     newFilmProcess : function(req, res) {
-        res.redirect('/')
+
+        Movie.create({
+            title: req.body.titulo,
+            rating: req.body.rating,
+            awards: req.body.awards,
+            releaseDate: req.body.fechaEstreno,
+            length: req.body.duracion,
+            genre: req.body.genero,
+            
+        })
+        .then(() => {
+            res.redirect('/')
+        })
     },
 
     detail : function(req, res) {
@@ -46,10 +58,62 @@ module.exports = {
             }]
         })
         .then(pelicula => {
-                return res.render('detail', { title: 'DH Movies Challenge', pelicula }); 
+                return res.render('detail', { title: `Detalle de la película`, pelicula }); 
             })
         .catch(error => console.log(error))
 
     },
+
+    update : function(req, res) {
+        let peliculaACambiar = Movie.findByPk(req.params.id, {
+            include : [{
+                association : "genero",
+            }, {
+                association : "actores"
+            }]
+        })
+
+        let generosListados = Genre.findAll()
+
+        Promise.all([peliculaACambiar, generosListados])
+        .then(function([pelicula, generos]){
+            return res.render('updateFilm', { title: 'Actualización de Pelicula', pelicula, generos }); 
+        })
+    },
+
+    updateProcess : function(req, res) {
+        Movie.update(
+
+            {
+                title: req.body.titulo,
+                rating: req.body.rating,
+                awards: req.body.awards,
+                releaseDate: req.body.releaseDate,
+                length: req.body.length,
+                genre: req.body.genre,
+            },
+            {
+                where : {
+                    id : req.params.id
+                }
+            }
+        )
+        .then(() => {
+            res.redirect('/')
+        })
+    },
+
+    delete : function(req, res) {
+        Movie.destroy(
+            {
+                where : {
+                    id : req.params.id
+                }
+            }
+        )
+        .then(() => {
+            res.redirect('/')
+        })
+    }
 
 }

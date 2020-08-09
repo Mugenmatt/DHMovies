@@ -27,14 +27,19 @@
         <% if(pelicula.length == null) { %> 
         <h3> Duración de la pelicula: <span class="infoEspecificaPeli"> No está registrado </span> </h3>
         <% } else { %>
-        <h3> Duración de la película: <span class="infoEspecificaPeli"> <%= pelicula.length %> </span> </h3>
+        <h3> Duración de la película: <span class="infoEspecificaPeli"> <%= pelicula.length %> minutos </span> </h3>
         <% } %>  
 
-        <h3> Lista de Actores: <ul>
-            <% pelicula.actores.map(actor => { %>
-                <li><span class="infoEspecificaPeli"> <%= actor.firstName %> <%= actor.lastName %>  </span></li>
-            <% }) %> 
-        </ul>
+        <!-- < % if(pelicula.actores.id != pelicula.id) { %>  -->
+            <!-- <h3> Lista de Actores: <span class="infoEspecificaPeli"> No hay actores asociados </span> </h3> -->
+        <!-- < % } else { %> -->
+            <h3> Lista de Actores: 
+                <ul>
+                    <% pelicula.actores.map(actor => { %>
+                        <li><span class="infoEspecificaPeli"> <%= actor.firstName %> <%= actor.lastName %>  </span></li>
+                    <% }) %> 
+                </ul>
+        <!-- < % } %>   -->
 
     </div>
 

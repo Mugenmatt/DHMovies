@@ -35,8 +35,8 @@ module.exports = (sequelize, dataTypes) => {
 
     const ActorMovie = sequelize.define(alias, cols, config);
 
-    // Movie.associate = function(models) {
-    //     Movie.hasMany(models.)
+    // ActorMovie.associate = function(models) {
+    //     ActorMovie.hasMany(models.)
     // }
 
     return ActorMovie;

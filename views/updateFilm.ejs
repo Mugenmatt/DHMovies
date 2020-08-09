@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agrega una nueva película</title>
+    <title>Actualizar película</title>
 </head>
 <body>
     
-    <h1>Agregá la nueva película</h1>
+    <h1>Actualizá la película</h1>
 
-    <form action="/newFilm" method="POST">
+    <form action="/detail/<%= pelicula.id %> /update" method="POST">
     
         <label for="titulo">Titulo</label>
         <input type="text" name="titulo" id="titulo">
@@ -21,19 +21,19 @@
         <input type="number" min="1" max="10" name="awards" id="awards">
 
         <label for="fechaEstreno">Fecha de Estreno</label>
-        <input type="date" name="fechaEstreno" id="fechaEstreno">
+        <input type="date" name="releaseDate" id="fechaEstreno">
 
         <label for="duración">Duración(en minutos)</label>
-        <input type="text" name="duracion" id="duracion">
+        <input type="text" name="length" id="duracion">
 
         <label for="genero">Género</label>
-        <select name="genero" id="genero">
+        <select name="genre" id="genero">
             <% generos.forEach(genero => { %>
-                <option name="genero" value="<%= genero.name %>"><%= genero.name %></option>
-            <% }) %> 
+                <option value=""><%= genero.name %></option>
+            <% }) %>
         </select>
 
-        <button type="submit">¡Agregar Película!</button>
+        <button type="submit">Actualizá la Película!</button>
     
     </form>
 

@@ -12,4 +12,10 @@ router.post('/newFilm', indexController.newFilmProcess);
 
 router.get('/detail/:id', indexController.detail)
 
+router.get('/detail/:id/update', indexController.update)
+
+router.post('/detail/:id/update', indexController.updateProcess)
+
+router.post('/detail/:id/delete', indexController.delete)
+
 module.exports = router;
