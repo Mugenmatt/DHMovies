@@ -29,8 +29,7 @@ const usersController = {
                 rol : req.body.rol
             })
             .then( () => {
-                // res.send('SIIIIIIIII!')
-                return res.redirect('/')
+                return res.redirect('/users/login')
             })
             .catch(err => {
                 console.log('-----------------------------------');
@@ -61,15 +60,16 @@ const usersController = {
             .then( usuario => {
                 if(usuario) {
                     if(bcryptJS.compareSync(req.body.password, usuario.password)) {
-                        let usuarioEnSesion = usuario;
                         
-                        delete usuarioEnSesion.dataValues.password;
+                        delete usuario.dataValues.password;
 
-                        req.session.usuario = usuarioEnSesion;
+                        req.session.usuario = usuario;
+
+                        res.locals.usuario = req.session.usuario;
 
                         return res.redirect('/')
                     } else {
-                        return res.render('login', {title : '¡Iniciá Sesión!', error: 'Los datos ingresados no coinciden'})
+                        return res.render('login', { title : '¡Iniciá Sesión!', error: 'Los datos ingresados no coinciden' })
                     }
                 }
             })
@@ -78,6 +78,12 @@ const usersController = {
             return res.render('login', { errors : errors.mapped(), title : '¡Iniciá Sesión!' })
         }
 
+    },
+
+    logout : function(req, res) {
+        req.session.destroy();
+        
+        return res.redirect('/')
     }
 
 }

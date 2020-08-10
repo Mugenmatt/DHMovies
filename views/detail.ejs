@@ -6,6 +6,19 @@
     <title>Detalle de pelicula: <%= pelicula.title %> </title>
 </head>
 <body>
+
+    <header>
+      
+    <% if(locals.usuario) { %> 
+        <form class="form-logout" action="/users" method="POST">
+        
+          <button class="logout" type="submit">Logout</button>
+        
+        </form>
+    <% } %> 
+  
+      </header>
+
     <h1>Detalle de <span class="peliTitulo"> <%= pelicula.title %> </span> </h1>
 
     <div class="infoPeli">
@@ -42,7 +55,7 @@
         <!-- < % } %>   -->
 
     </div>
-    <!-- < % if(rol == 1) { %>  -->
+    <% if(locals.usuario.rol !== 0) { %> 
         <a href="/detail/<%= pelicula.id %>/update" class="actualizarPeli">Actualizá los datos</a>
 
         <form class="formBorrarPeli" action="/detail/<%= pelicula.id %>/delete" method="POST">
@@ -51,7 +64,7 @@
 
         </form>
 
-    <!-- < % } %>  -->
+    <% } %> 
     
     <a href="/" class="volverHome">Volver a la Home</a>
 

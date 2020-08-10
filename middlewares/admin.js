@@ -3,22 +3,14 @@ const sequelize = DB.sequelize;
 
 const User = DB.User;
 
-module.exports = {
+function adminMiddleware(req, res, next) {
 
-    admin : function(req, res, next) {
+    // if(req.session.usuario.rol !== 0) {
+        return next()
+    // }
 
-        User.findOne({
-                where: {
-                    rol : req.body.rol
-                }
-            })
-            .then(usuario => {
-                if(usuario == 1) {
-                    next();
-                } else {
-                    return res.redirect('/', {denegado : 'Solo los Administradores pueden ejecutar esta acción'})
-                }
-            })
-    }
+    // return res.redirect('/')
 
 }
+
+module.exports = adminMiddleware;

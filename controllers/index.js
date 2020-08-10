@@ -34,18 +34,22 @@ module.exports = {
 
     newFilmProcess : function(req, res) {
 
-        Movie.create({
-            title: req.body.titulo,
-            rating: req.body.rating,
-            awards: req.body.awards,
-            releaseDate: req.body.fechaEstreno,
-            length: req.body.duracion,
-            genre: req.body.genero,
+        let usuarioEnSesion = req.session.usuarioEnSesion;
+        if(usuarioEnSesion) {
             
-        })
-        .then(() => {
-            res.redirect('/')
-        })
+            Movie.create({
+                title: req.body.titulo,
+                rating: req.body.rating,
+                awards: req.body.awards,
+                releaseDate: req.body.fechaEstreno,
+                length: req.body.duracion,
+                genre: req.body.genero,
+                
+            })
+            .then(() => {
+                res.redirect('/')
+            })
+        }
     },
 
     detail : function(req, res) {

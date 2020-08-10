@@ -7,18 +7,16 @@
   <body>
 
     <header>
-      <!-- < % if(rol) { %>
-        <h2>Hola, sos < %= rol %> </h2>
-      < % } else { %>
-        <h2>Hola, sos < %= rol %> </h2>
-      < % } %> -->
+
+      <% if(locals.usuario) { %> 
+        <form class="form-logout" action="/users" method="POST">
+        
+          <button class="logout" type="submit">Logout</button>
+        
+        </form>
+      <% } %> 
+
     </header>
-
-    <!-- < % if(admin == 1) { %> 
-      <h2>< %= denegado %> </h2>
-    < % } %> -->
-
-    
 
     <h1><%= title %></h1>
 
@@ -32,12 +30,17 @@
     
     </ul>
 
-    <!-- < % if(rol == 1) { %>  -->
+    <% if(locals.usuario.rol !== 0) { %> 
     <a href="/newFilm">¡Agregá una película!</a>
-    <!-- < % } %>  -->
+    <% } %> 
 
-    <a href="/users/register">¡Registrate!</a>
-    <a href="/users/login">¡Iniciá Sesión!</a>
+    <% if(!locals.usuario) { %> 
+      <a href="/users/register">¡Registrate!</a>
 
+      <a href="/users/login">¡Iniciá Sesión!</a>
+
+      <% } else { %> 
+        <h1>Bienvenido <%= locals.usuario.email %> </h1>
+      <% } %> 
   </body>
 </html>

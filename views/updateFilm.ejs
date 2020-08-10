@@ -6,6 +6,17 @@
     <title>Actualizar película</title>
 </head>
 <body>
+
+    <header>
+        <% if(locals.usuario) { %> 
+      
+            <form class="form-logout" action="/users" method="POST">
+            
+            <button class="logout" type="submit">Logout</button>
+            
+            </form>
+        <% } %> 
+      </header>
     
     <h1>Actualizá la película</h1>
 

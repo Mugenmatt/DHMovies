@@ -3,21 +3,23 @@ let router = express.Router();
 
 const indexController = require('../controllers/index')
 
-const admin = require('../middlewares/admin')
+const adminMiddleware = require('../middlewares/admin')
+
+const loggedMiddleware = require('../middlewares/loggedMiddleware')
 
 /* GET home page. */
-router.get('/', indexController.index);
+router.get('/', loggedMiddleware, adminMiddleware, indexController.index);
 
-router.get('/newFilm',indexController.newFilm);
+router.get('/newFilm', loggedMiddleware, indexController.newFilm);
 
-router.post('/newFilm', indexController.newFilmProcess);
+router.post('/newFilm', loggedMiddleware, indexController.newFilmProcess);
 
-router.get('/detail/:id',indexController.detail)
+router.get('/detail/:id', loggedMiddleware, indexController.detail)
 
-router.get('/detail/:id/update', indexController.update)
+router.get('/detail/:id/update', loggedMiddleware, indexController.update)
 
-router.post('/detail/:id/update', indexController.updateProcess)
+router.post('/detail/:id/update', loggedMiddleware, indexController.updateProcess)
 
-router.post('/detail/:id/delete', indexController.delete)
+router.post('/detail/:id/delete', loggedMiddleware, indexController.delete)
 
 module.exports = router;
