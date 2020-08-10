@@ -56,10 +56,11 @@ module.exports = {
 
         Movie.findByPk(req.params.id, {
             include : [{
-                association : "genero",
-            }, {
-                association : "actores"
-            }]
+                    association : "genero",
+                }, {
+                    association : "actores"
+                }
+            ]
         })
         .then(pelicula => {
                 return res.render('detail', { title: `Detalle de la película`, pelicula }); 
@@ -87,7 +88,6 @@ module.exports = {
 
     updateProcess : function(req, res) {
         Movie.update(
-
             {
                 title: req.body.titulo,
                 rating: req.body.rating,

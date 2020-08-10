@@ -1,11 +1,5 @@
-const path = require('path');
-const bcryptJS = require('bcryptjs')
+
 const { check, validationResult, body } = require('express-validator');
-
-const DB = require('../database/models')
-const sequelize = DB.sequelize;
-
-const User = DB.User;
 
 module.exports = {
     register : [

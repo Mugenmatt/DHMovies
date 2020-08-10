@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <header>
+
+        <% if(locals.usuario) { %> 
+          <form class="form-logout" action="/users" method="POST">
+          
+            <button class="logout" type="submit">Logout</button>
+          
+          </form>
+        <% } %> 
+  
+    </header>
+    
+      <ul>
+        <% usuarios.forEach( usuario => { %>
+
+            <li> <a href="/users/database/user-detail/<%= usuario.id %> "><%= usuario.email %></a></li>
+
+        <% }) %> 
+    </ul>
+
+    <a href="/">Volver a la Home</a>
+</body>
+</html>

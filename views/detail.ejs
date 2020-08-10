@@ -43,20 +43,24 @@
         <h3> Duración de la película: <span class="infoEspecificaPeli"> <%= pelicula.length %> minutos </span> </h3>
         <% } %>  
 
-        <!-- < % if(pelicula.actores.id != pelicula.id) { %>  -->
-            <!-- <h3> Lista de Actores: <span class="infoEspecificaPeli"> No hay actores asociados </span> </h3> -->
-        <!-- < % } else { %> -->
+
+        <% if(pelicula.actores != pelicula.id) { %>
             <h3> Lista de Actores: 
                 <ul>
-                    <% pelicula.actores.map(actor => { %>
-                        <li><span class="infoEspecificaPeli"> <%= actor.firstName %> <%= actor.lastName %>  </span></li>
+                    <% pelicula.actores.forEach(actor => { %>
+
+                            <li><span class="infoEspecificaPeli"> <%= actor.firstName %> <%= actor.lastName %>  </span></li>
+                        
                     <% }) %> 
                 </ul>
-        <!-- < % } %>   -->
+        <% } else {%>
+            <h3>No hay actores relacionados</h3>
+        <% } %> 
 
+        
     </div>
     <% if(locals.usuario.rol !== 0) { %> 
-        <a href="/detail/<%= pelicula.id %>/update" class="actualizarPeli">Actualizá los datos</a>
+        <a href="/detail/<%= pelicula.id %>/update" class="actualizarPeli">Actualizá los datos de la película</a>
 
         <form class="formBorrarPeli" action="/detail/<%= pelicula.id %>/delete" method="POST">
         

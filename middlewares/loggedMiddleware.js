@@ -1,7 +1,4 @@
-// const DB = require('../database/models')
-// const sequelize = DB.sequelize;
 
-// const User = DB.User;
 
 module.exports = function(req,res,next) {
 

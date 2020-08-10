@@ -84,6 +84,57 @@ const usersController = {
         req.session.destroy();
         
         return res.redirect('/')
+    },
+
+    users : function(req, res) {
+        User.findAll()
+        .then( usuarios => {
+            return res.render('users', {title: 'Usuarios Cinefilos', usuarios})
+        })
+    },
+
+    usersDetail : function(req, res) {
+        User.findByPk(req.params.id)
+        .then( usuarioDetalle => {
+            return res.render('user-detail', {usuarioDetalle, title: 'Detalle del usuario cinefilo'})
+        } )
+    },
+
+    usersUpdate : function(req, res) {
+        
+        return res.render('updateRol')
+
+    },
+
+    usersUpdateProcess : function( req, res ) {
+
+        User.update(
+            {
+                rol : req.body.rol
+            },
+            {
+                where : {
+                    id : req.params.id
+                }
+            }
+        )
+        .then(() => {
+            res.redirect('/users/database')
+        })
+
+    },
+
+    usersDelete : function(req, res) {
+        User.destroy(
+            {
+                where : {
+                    id : req.params.id
+                }
+            }
+        )
+        .then(() => {
+            res.redirect('/users/database')
+        })
     }
 
 }

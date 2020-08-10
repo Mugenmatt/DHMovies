@@ -3,12 +3,10 @@ let router = express.Router();
 
 const indexController = require('../controllers/index')
 
-const adminMiddleware = require('../middlewares/admin')
-
 const loggedMiddleware = require('../middlewares/loggedMiddleware')
 
 /* GET home page. */
-router.get('/', loggedMiddleware, adminMiddleware, indexController.index);
+router.get('/', loggedMiddleware, indexController.index);
 
 router.get('/newFilm', loggedMiddleware, indexController.newFilm);
 

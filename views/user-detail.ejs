@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Usuario</title>
+</head>
+<body>
+    <header>
+
+        <% if(locals.usuario) { %> 
+          <form class="form-logout" action="/users" method="POST">
+          
+            <button class="logout" type="submit">Logout</button>
+          
+          </form>
+        <% } %> 
+  
+      </header>
+    <ul>
+        <li> ID: <%= usuarioDetalle.id %>  </li>
+        <li> Email: <%= usuarioDetalle.email %> </li>
+        <li> Rol: <%= usuarioDetalle.rol %> </li>
+      </ul>
+
+    <form action="/users/database/user-detail/<%= usuarioDetalle.id %>/delete" method="POST">
+    
+      <button type="submit">Borrar Usuario</button>
+
+    </form>
+
+    <a href="/users/database/user-detail/<%= usuarioDetalle.id %>/update-rol">Actualizar Usuario</a>
+
+    <a href="/users/database">Volver al listado de Usuarios Cinefilos</a>
+    <a href="/">Volver a la Home</a>
+
+</body>
+</html>

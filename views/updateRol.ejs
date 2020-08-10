@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Actualizá el rol del usuario!</title>
+</head>
+<body>
+    <h1>¿Qué rol tendra ahora?</h1>
+    
+    <form action="/users/database/user-detail/<%= usuario.id %>/update-rol" method="POST">
+    
+        <label for="rol">Rol</label>
+        <select name="rol" id="rol">
+            <option value=0>Usuario</option>
+            <option value=1>Admin</option>
+        </select>
+
+        <button type="submit">Actualizar Rol de Usuario</button>
+
+    </form>
+
+    <a href="/">Volver a la Home</a>
+    
+</body>
+</html>

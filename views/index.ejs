@@ -30,8 +30,9 @@
     
     </ul>
 
-    <% if(locals.usuario.rol !== 0) { %> 
+    <% if(locals.usuario.rol == 1 ) { %> 
     <a href="/newFilm">¡Agregá una película!</a>
+    <a href="/users/database">¡Usuarios Cinefilos!</a>
     <% } %> 
 
     <% if(!locals.usuario) { %> 
@@ -42,5 +43,5 @@
       <% } else { %> 
         <h1>Bienvenido <%= locals.usuario.email %> </h1>
       <% } %> 
-  </body>
-</html>
+</a>
+
