@@ -24,22 +24,22 @@
     <form action="/detail/<%= pelicula.id %> /update" method="POST">
     
         <label for="titulo">Titulo</label>
-        <input type="text" name="titulo" id="titulo">
+        <input type="text" name="titulo" id="titulo" placeholder="<%= pelicula.title %>">
 
         <label for="rating">Rating</label>
-        <input type="number" min="1" max="10" name="rating" id="rating">
+        <input type="number" min="1" max="10" name="rating" id="rating"  placeholder="<%= pelicula.rating %>">
 
         <label for="awards">Awards</label>
-        <input type="number" min="1" max="10" name="awards" id="awards">
+        <input type="number" min="1" max="10" name="awards" id="awards"  placeholder="<%= pelicula.awards %>">
 
         <label for="fechaEstreno">Fecha de Estreno</label>
-        <input type="date" name="releaseDate" id="fechaEstreno">
+        <input type="date" name="releaseDate" id="fechaEstreno" >
 
         <label for="duración">Duración(en minutos)</label>
-        <input type="text" name="length" id="duracion">
+        <input type="text" name="length" id="duracion"  placeholder="<%= pelicula.length %>">
 
         <label for="genero">Género</label>
-        <select name="genre" id="genero">
+        <select name="genre" id="genero" >
             <% generos.forEach(genero => { %>
                 <option value=""><%= genero.name %></option>
             <% }) %>
