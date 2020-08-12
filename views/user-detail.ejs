@@ -12,7 +12,7 @@
         <% if(locals.usuario) { %> 
           <form class="form-logout" action="/users" method="POST">
           
-            <button class="logout" type="submit">Logout</button>
+            <button class="logout" type="submit">Cerrar Sesión</button>
           
           </form>
         <% } %> 
@@ -33,7 +33,7 @@
 
     </form>
 
-    <a class="cambiarPagina" href="/users/database/user-detail/<%= usuarioDetalle.id %>/update-rol">Actualizar Usuario</a>
+    <a class="cambiarPagina" href="/users/database/user-detail/<%= usuarioDetalle.id %>/update-rol">Actualizar Rol</a>
 
     <a class="cambiarPagina" href="/users/database">Volver al listado de Usuarios Cinefilos</a>
     <a class="cambiarPagina" href="/">Volver a la Home</a>

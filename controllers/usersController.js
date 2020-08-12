@@ -101,16 +101,20 @@ const usersController = {
     },
 
     usersUpdate : function(req, res) {
-        
-        return res.render('updateRol')
+        let urlId = req.params.id;
+        return res.render('updateRol', {urlId})
 
     },
 
     usersUpdateProcess : function( req, res ) {
+        
+        let rolUsuario = req.body.rol;
+
+        rolUsuario = Number(rolUsuario)
 
         User.update(
             {
-                rol : req.body.rol
+                rol : rolUsuario
             },
             {
                 where : {

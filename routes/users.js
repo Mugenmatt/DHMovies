@@ -6,7 +6,7 @@ const usersController = require('../controllers/usersController')
 const validator = require('../middlewares/validator')
 
 const loggedMiddleware = require('../middlewares/loggedMiddleware');
-const { updateProcess } = require('../controllers');
+
 
 router.get('/register', usersController.register);
 router.post('/register', validator.register, usersController.registerProcess);

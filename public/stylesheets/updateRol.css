@@ -36,7 +36,7 @@ main {
     padding: 20px;
     width: 20%;
     border-radius: 20px;
-    margin: 15% auto;
+    margin: 5% auto;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -55,7 +55,7 @@ main {
 @keyframes fadeIn {
     0% {
         opacity:0;
-        transform: translateX(75px) translateY(-100px);
+        transform: translateY(100px);
     }
 
     50% {
@@ -70,7 +70,7 @@ main {
 @-moz-keyframes fadeIn {
     0% {
         opacity:0;
-        transform: translateX(75px) translateY(-100px);
+        transform: translateY(100px);
     }
 
     50% {
@@ -85,7 +85,7 @@ main {
 @-webkit-keyframes fadeIn {
     0% {
         opacity:0;
-        transform: translateX(75px) translateY(-100px);
+        transform: translateY(100px);
     }
 
     50% {
@@ -100,7 +100,7 @@ main {
 @-o-keyframes fadeIn {
     0% {
         opacity:0;
-        transform: translateX(75px) translateY(-100px);
+        transform: translateY(100px);
     }
 
     50% {
@@ -115,7 +115,7 @@ main {
 @-ms-keyframes fadeIn {
     0% {
         opacity:0;
-        transform: translateX(75px) translateY(-100px);
+        transform: translateY(100px);
     }
 
     50% {

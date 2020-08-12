@@ -8,21 +8,32 @@
 </head>
 <body>
 
+    <header>
+
+        <% if(locals.usuario) { %> 
+        
+            <form class="form-logout" action="/users" method="POST">
+            
+            <button class="logout" type="submit">Cerrar Sesión</button>
+            
+            </form>
+        <% } %> 
+      </header>
+
     <main class="fade-in">
     <h1>¿Qué rol tendra ahora?</h1>
     
-    <form action="/users/database/user-detail/<%= usuario.id %>/update-rol" method="POST">
+    <form action="/users/database/user-detail/<%= urlId %>/update-rol" method="POST">
     
         <label for="rol">Rol</label>
         <select name="rol" id="rol">
-            <option value=0>Usuario</option>
-            <option value=1>Admin</option>
+            <option value="0">Usuario</option>
+            <option value="1">Admin</option>
         </select>
-
         <button type="submit">Actualizar Rol de Usuario</button>
 
     </form>
-
+    <a class="cambiarPagina" href="/users/database">Volver a la Lista de Usuarios</a>
     <a class="cambiarPagina" href="/">Volver a la Home</a>
 </main>
 </body>
