@@ -1,0 +1,106 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ccc;
+    background-image: url('/../images/cine.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.logout {
+    padding: 20px;
+    font-size: 2rem;
+    border-radius: 20px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.logout:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+main {
+    background-color: whitesmoke;
+    padding: 20px;
+    width: 20%;
+    border-radius: 20px;
+    margin: 3% auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+input {
+    border-radius: 20px;
+    font-size: 1.4rem;
+    padding: 10px;
+    border: none;
+    box-shadow: 2px 0px 10px black;
+}
+
+select {
+    border-radius: 20px;
+    padding: 10px;
+    border: none;
+    box-shadow: 2px 0px 10px black;    
+    margin-bottom: 5%;
+    font-size: 1.4rem;
+}
+
+button {
+    margin: 15% 0 10% 0;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 1.4rem;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+.cambiarPagina {
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 2% 0;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.cambiarPagina:hover {
+    background-color: black;
+    color: white;
+}

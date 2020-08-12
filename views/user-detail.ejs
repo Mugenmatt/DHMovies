@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles del Usuario</title>
+    <link rel='stylesheet' href='/stylesheets/user-detail.css' />
 </head>
 <body>
     <header>
@@ -17,6 +18,9 @@
         <% } %> 
   
       </header>
+
+      <main class="fade-in">
+
     <ul>
         <li> ID: <%= usuarioDetalle.id %>  </li>
         <li> Email: <%= usuarioDetalle.email %> </li>
@@ -29,10 +33,10 @@
 
     </form>
 
-    <a href="/users/database/user-detail/<%= usuarioDetalle.id %>/update-rol">Actualizar Usuario</a>
+    <a class="cambiarPagina" href="/users/database/user-detail/<%= usuarioDetalle.id %>/update-rol">Actualizar Usuario</a>
 
-    <a href="/users/database">Volver al listado de Usuarios Cinefilos</a>
-    <a href="/">Volver a la Home</a>
-
+    <a class="cambiarPagina" href="/users/database">Volver al listado de Usuarios Cinefilos</a>
+    <a class="cambiarPagina" href="/">Volver a la Home</a>
+  </main>
 </body>
 </html>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle de pelicula: <%= pelicula.title %> </title>
+    <link rel='stylesheet' href='/stylesheets/detail.css' />
 </head>
 <body>
 
@@ -18,7 +19,7 @@
     <% } %> 
   
       </header>
-
+<main class="fade-in">
     <h1>Detalle de <span class="peliTitulo"> <%= pelicula.title %> </span> </h1>
 
     <div class="infoPeli">
@@ -45,7 +46,7 @@
 
 
         <% if(pelicula.actores != pelicula.id) { %>
-            <h3> Lista de Actores: 
+            <h3 class="listaActores"> Lista de Actores: </h3>
                 <ul>
                     <% pelicula.actores.forEach(actor => { %>
 
@@ -60,17 +61,18 @@
         
     </div>
     <% if(locals.usuario.rol !== 0) { %> 
-        <a href="/detail/<%= pelicula.id %>/update" class="actualizarPeli">Actualizá los datos de la película</a>
+        <div class="updateDelete">
+        <a class="actualizar" href="/detail/<%= pelicula.id %>/update" class="actualizarPeli">Actualizá los datos de la película</a>
 
         <form class="formBorrarPeli" action="/detail/<%= pelicula.id %>/delete" method="POST">
         
             <input class="inputBorrarPeli" type="submit" value="Borrar">
 
         </form>
-
+    </div>
     <% } %> 
     
-    <a href="/" class="volverHome">Volver a la Home</a>
-
+    <a class="cambiarPagina" href="/" class="volverHome">Volver a la Home</a>
+</main>
 </body>
 </html>

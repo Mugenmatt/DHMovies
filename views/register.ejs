@@ -2,14 +2,14 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/register.css' />
   </head>
   <body>
 
     <header>
     
     </header>
-
+<main class="fade-in">
     <h1><%= title %></h1>
 
     <form action="/users/register" method="POST">
@@ -54,9 +54,9 @@
 
     </form>
 
-    <a href="/users/login">¿Ya tenes un usuario?</a>
+    <a class="cambiarPagina" href="/users/login">¿Ya tenes un usuario?</a>
 
-    <a href="/">Volver a Home</a>
-
+    <a class="cambiarPagina" href="/">Volver a Home</a>
+</main>
 </body>
 </html>

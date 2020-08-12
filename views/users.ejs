@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/users.css' />
+
 </head>
 <body>
 
@@ -18,7 +20,8 @@
         <% } %> 
   
     </header>
-    
+    <main class="fade-in">
+      <h1>Usuarios Cinefilos</h1>
       <ul>
         <% usuarios.forEach( usuario => { %>
 
@@ -27,6 +30,8 @@
         <% }) %> 
     </ul>
 
-    <a href="/">Volver a la Home</a>
+    <a class="cambiarPagina" href="/">Volver a la Home</a>
+
+  </main>
 </body>
 </html>

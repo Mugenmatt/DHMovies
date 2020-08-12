@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agrega una nueva película</title>
+    <link rel='stylesheet' href='/stylesheets/newFilm.css' />
 </head>
 <body>
 
@@ -18,7 +19,7 @@
             </form>
         <% } %> 
       </header>
-    
+    <main class="fade-in">
     <h1>Agregá la nueva película</h1>
 
     <form action="/newFilm" method="POST">
@@ -45,11 +46,11 @@
             <% }) %> 
         </select>
 
-        <button type="submit">¡Agregar Película!</button>
+        <button type="submit" class="agregar">¡Agregar Película!</button>
     
     </form>
 
-    <a href="/">Volver a la Home</a>
-
+    <a class="cambiarPagina" href="/">Volver a la Home</a>
+</main>
 </body>
 </html>

@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Actualizá el rol del usuario!</title>
+    <link rel='stylesheet' href='/stylesheets/updateRol.css' />
 </head>
 <body>
+
+    <main class="fade-in">
     <h1>¿Qué rol tendra ahora?</h1>
     
     <form action="/users/database/user-detail/<%= usuario.id %>/update-rol" method="POST">
@@ -20,7 +23,7 @@
 
     </form>
 
-    <a href="/">Volver a la Home</a>
-    
+    <a class="cambiarPagina" href="/">Volver a la Home</a>
+</main>
 </body>
 </html>

@@ -1,0 +1,215 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ccc;
+    background-image: url('/../images/cine.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.logout {
+    padding: 20px;
+    font-size: 2rem;
+    border-radius: 20px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+main {
+    background-color: whitesmoke;
+    padding: 20px;
+    width: 50%;
+    border-radius: 20px;
+    margin: 3% auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.fade-in {
+    animation: fadeIn ease 2.5s forwards;
+    -moz-animation: fadeIn ease 2.5s forwards;
+    -webkit-animation: fadeIn ease 2.5s forwards;
+    -moz-animation: fadeIn ease 2.5s forwards;
+    -o-animation: fadeIn ease 2.5s forwards;
+    -ms-animation: fadeIn ease 2.5s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity:0;
+        transform: translateX(-100px);
+    }
+
+    50% {
+        opacity:0.7;
+    }
+
+    100% {
+        opacity:1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity:0;
+        transform: translateX(-100px);
+    }
+
+    50% {
+        opacity:0.7;
+    }
+
+    100% {
+        opacity:1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity:0;
+        transform: translateX(-100px);
+    }
+
+    50% {
+        opacity:0.7;
+    }
+
+    100% {
+        opacity:1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity:0;
+        transform: translateX(-100px);
+    }
+
+    50% {
+        opacity:0.7;
+    }
+
+    100% {
+        opacity:1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity:0;
+        transform: translateX(-100px);
+    }
+
+    50% {
+        opacity:0.7;
+    }
+
+    100% {
+        opacity:1;
+    }
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    margin: 5% 0;
+    font-size: 1.4rem;
+}
+
+.infoEspecificaPeli {
+    color: indianred;
+}
+
+.listaActores {
+    margin-top: 3%;
+    margin-bottom: 4%;
+}
+
+li {
+    margin: 0 0 2% 0;
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+.infoEspecificaPeli {
+    text-decoration: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.logout:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+input {
+    border-radius: 20px;
+    font-size: 1.4rem;
+    padding: 10px;
+    background-color: none;
+    border: 1px solid black;
+    width: 100%;
+}
+
+input:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+.actualizar {
+    margin: 15% 0 5% 0;
+    padding: 10px;
+    font-size: 1.4rem;
+    border-radius: 20px;
+    text-decoration: none;
+    border: 1px solid black;
+    color: black;
+}
+
+.actualizar:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+.cambiarPagina {
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 2% 0;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.cambiarPagina:hover {
+    background-color: black;
+    color: white;
+}
+
+.updateDelete {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

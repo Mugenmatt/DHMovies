@@ -2,7 +2,7 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/index.css' />
   </head>
   <body>
 
@@ -18,9 +18,10 @@
 
     </header>
 
-    <h1><%= title %></h1>
+<div class="lista fade-in">
+    <h1 class="titulo"><%= title %></h1>
 
-    <h3>Lista de peliculas de DH Movies:</h3>
+    <h3 class="tituloLista">Lista de peliculas de DH Movies:</h3>
 
     <ul class="listaPeliculas">
     
@@ -29,19 +30,22 @@
       <% }) %>
     
     </ul>
+<div class="aButtonDiv">
 
     <% if(locals.usuario.rol == 1 ) { %> 
-    <a href="/newFilm">¡Agregá una película!</a>
-    <a href="/users/database">¡Usuarios Cinefilos!</a>
+    <a class="aButton" href="/newFilm">¡Agregá una película!</a>
+    <a class="aButton" href="/users/database">¡Usuarios Cinefilos!</a>
     <% } %> 
+  </div>
 
     <% if(!locals.usuario) { %> 
-      <a href="/users/register">¡Registrate!</a>
+      <a class="aButton" href="/users/register">¡Registrate!</a>
 
-      <a href="/users/login">¡Iniciá Sesión!</a>
+      <a class="aButton" href="/users/login">¡Iniciá Sesión!</a>
 
       <% } else { %> 
-        <h1>Bienvenido <%= locals.usuario.email %> </h1>
+        <h1 class="welcome">Bienvenido/a <span class="usuario"> <%= locals.usuario.email %> </span> </h1>
       <% } %> 
-</a>
 
+</div>
+</body>
