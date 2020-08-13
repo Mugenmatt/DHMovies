@@ -25,22 +25,26 @@
     <form action="/newFilm" method="POST">
     
         <label for="titulo">Titulo</label>
-        <input type="text" name="titulo" id="titulo">
+        <input type="text" name="titulo" id="titulo" required>
+  
 
         <label for="rating">Rating</label>
-        <input type="number" min="1" max="10" name="rating" id="rating">
+        <input type="number" min="1" max="10" name="rating" id="rating" required>
+    
 
         <label for="awards">Awards</label>
-        <input type="number" min="1" max="10" name="awards" id="awards">
+        <input type="number" min="1" max="10" name="awards" id="awards" required>
+   
 
         <label for="fechaEstreno">Fecha de Estreno</label>
-        <input type="date" name="fechaEstreno" id="fechaEstreno">
+        <input type="date" name="fechaEstreno" id="fechaEstreno" required>
 
         <label for="duración">Duración(en minutos)</label>
-        <input type="text" name="duracion" id="duracion">
+        <input type="text" name="duracion" id="duracion" required>
+        
 
         <label for="genero">Género</label>
-        <select name="genero" id="genero">
+        <select name="genero" id="genero" required>
             <% generos.forEach(genero => { %>
                 <option name="genero" value="<%= genero.name %>"><%= genero.name %></option>
             <% }) %> 

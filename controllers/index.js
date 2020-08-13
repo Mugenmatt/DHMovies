@@ -10,6 +10,8 @@ const Actor = DB.Actor;
 
 const ActorMovie = DB.ActorMovie;
 
+const { validationResult } = require('express-validator')
+
 module.exports = {
 
     index : function(req, res) {

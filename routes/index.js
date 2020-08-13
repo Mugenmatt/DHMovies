@@ -5,6 +5,8 @@ const indexController = require('../controllers/index')
 
 const loggedMiddleware = require('../middlewares/loggedMiddleware')
 
+const validator = require('../middlewares/validator')
+
 /* GET home page. */
 router.get('/', loggedMiddleware, indexController.index);
 

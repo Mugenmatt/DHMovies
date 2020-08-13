@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
-  secret: "Challenge para DH!",
+  secret: "dh movies, es un secreto!",
   resave: false,
   saveUninitialized: true
 }));

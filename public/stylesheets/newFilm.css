@@ -150,6 +150,7 @@ input {
     padding: 10px;
     border: none;
     box-shadow: 2px 0px 10px black;
+    text-align: center;
 }
 
 select {
@@ -159,6 +160,7 @@ select {
     box-shadow: 2px 0px 10px black;    
     margin-bottom: 5%;
     font-size: 1.4rem;
+    text-align: center;
 }
 
 .agregar {
@@ -188,4 +190,9 @@ select {
 .cambiarPagina:hover {
     background-color: black;
     color: white;
+}
+
+.error {
+    font-size: 3rem;
+    background-color: red;
 }
