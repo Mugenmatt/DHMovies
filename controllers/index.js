@@ -42,7 +42,7 @@ module.exports = {
                 awards: req.body.awards,
                 releaseDate: req.body.fechaEstreno,
                 length: req.body.duracion,
-                genre: req.body.genero
+                genre_id: req.body.genero
                 
             })
             .then(() => {

@@ -60,7 +60,7 @@ const usersController = {
             .then( usuario => {
                 if(usuario) {
                     if(bcryptJS.compareSync(req.body.password, usuario.password)) {
-                        
+
                         delete usuario.dataValues.password;
 
                         req.session.usuario = usuario;
@@ -69,15 +69,15 @@ const usersController = {
 
                         return res.redirect('/')
                     } else {
-                        return res.render('login', { title : '¡Iniciá Sesión!', error: 'Los datos ingresados no coinciden' })
+                        return res.render('login', { title : '¡Iniciá Sesión!', error: 'Usuario y/o contraseña incorrectos' })
                     }
+                } else {
+                    return res.render('login', { errors : errors.mapped(), title : '¡Iniciá Sesión!' })
+                    
                 }
             })
 
-        } else {
-            return res.render('login', { errors : errors.mapped(), title : '¡Iniciá Sesión!' })
-        }
-
+        } 
     },
 
     logout : function(req, res) {

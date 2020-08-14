@@ -60,7 +60,7 @@
 
         
     </div>
-    <% if(locals.usuario.rol !== 0) { %> 
+    <% if(locals.usuario.rol == 1) { %> 
         <div class="updateDelete">
         <a class="actualizar" href="/detail/<%= pelicula.id %>/update" class="actualizarPeli">Actualizá los datos de la película</a>
 

@@ -46,7 +46,7 @@
         <label for="genero">Género</label>
         <select name="genero" id="genero" required>
             <% generos.forEach(genero => { %>
-                <option name="genero" value="<%= genero.name %>"><%= genero.name %></option>
+                <option name="genero" value="<%= genero.id %>"><%= genero.name %></option>
             <% }) %> 
         </select>
 
