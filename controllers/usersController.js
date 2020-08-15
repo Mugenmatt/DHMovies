@@ -67,6 +67,10 @@ const usersController = {
 
                         res.locals.usuario = req.session.usuario;
 
+                        if(req.body.recordame != undefined) {
+                            res.cookie('recordame', usuario.email, { maxAge: 1000 * 60 * 60 * 24 } )
+                        }
+
                         return res.redirect('/')
                     } else {
                         return res.render('login', { title : '¡Iniciá Sesión!', error: 'Usuario y/o contraseña incorrectos' })
@@ -82,6 +86,10 @@ const usersController = {
 
     logout : function(req, res) {
         req.session.destroy();
+
+        if(req.cookies.recordame) {
+            res.clearCookie('recordame', { path : '/' })
+        }
         
         return res.redirect('/')
     },
